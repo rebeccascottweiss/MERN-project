@@ -61,9 +61,9 @@ export default function ChildForm(props) {
     }
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" style={{backgroundColor:"white"}}>
       <CssBaseline />
-      <div className={classes.paper}>
+      <div className={classes.paper} >
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
@@ -107,21 +107,38 @@ export default function ChildForm(props) {
               />
             </Grid>
             <Grid item xs={12}>
+            <Typography component="h3">
+                Address
+            </Typography>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
+                name="streetAddress"
+                label="Street Address"
+                type="streetAddress"
+                id="streetAddress"
+                autoComplete="current-streetAddress"
               />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="city"
+                label="City"
+                type="city"
+                id="city"
+                autoComplete="current-city"
+              />
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="zipcode"
+                label="Zipcode"
+                type="zipcode"
+                id="zipcode"
+                autoComplete="current-zipcode"
               />
             </Grid>
           </Grid>
@@ -133,20 +150,10 @@ export default function ChildForm(props) {
             className={classes.submit}
             onSubmit={handleSubmit}
           >
-            Sign Up
+            Submit This Child
           </Button>
-          <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
-              </Link>
-            </Grid>
-          </Grid>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }
