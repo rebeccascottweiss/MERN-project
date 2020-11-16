@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, navigate } from "@reach/router"; 
+import { Link } from "@reach/router"; 
 // import axios from "axios"; 
 import ChildForm from "../components/ChildForm"; 
 
@@ -28,7 +28,6 @@ const New = (props) => {
 
   return <div>
     <Link to="/">Home</Link>
-    <p style={{color:"purple"}}>Add a new author:</p>
     <ChildForm onSubmitProp = { createChild } name={ name } setName={ setName } errors={ errors } setErrors={ setErrors } />
   </div>;
 };
