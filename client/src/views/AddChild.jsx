@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "@reach/router"; 
 // import axios from "axios"; 
-import ChildForm from "../components/ChildForm"; 
+import ChildForm2 from "../components/ChildForm2"; 
+import Header from "../components/Header"; 
 
 const New = (props) => {
-    const [name, setName] = useState(""); 
+    const [child, setChild] = useState({}); 
     const [errors, setErrors] = useState([]); 
 
     const createChild = (newChild) =>{
@@ -27,8 +27,12 @@ const New = (props) => {
     }
 
   return <div>
-    <Link to="/">Home</Link>
-    <ChildForm onSubmitProp = { createChild } name={ name } setName={ setName } errors={ errors } setErrors={ setErrors } />
+    <Header />
+    <ChildForm2 
+        onSubmitProp={ createChild }
+        child = { child }
+        setChild = { setChild }    
+    />
   </div>;
 };
 
