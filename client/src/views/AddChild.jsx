@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "@reach/router"; 
 // import axios from "axios"; 
 import ChildForm2 from "../components/ChildForm2"; 
+import Header from "../components/Header"; 
 
 const New = (props) => {
     const [child, setChild] = useState({}); 
@@ -27,7 +27,7 @@ const New = (props) => {
     }
 
   return <div>
-    <Link to="/">Home</Link>
+    <Header />
     <ChildForm2 
         onSubmitProp={ createChild }
         child = { child }
