@@ -9,17 +9,22 @@ import {
     MenuItem,
     InputLabel,
     Typography,
-    Card,
 } from '@material-ui/core';
 
 const styles = {
     paper: {
-        width: "30rem", 
-        padding: "1rem",
+        width: "55%", 
+        padding: "1rem 2rem",
         margin: "1rem auto"
     },
+
     input: {
-        marginBottom: "1rem"
+        marginBottom: "1rem", 
+    },
+
+    input2: {
+        marginBottom: "1rem",
+        marginRight: "1rem"
     },
 
     formControl: {
@@ -32,31 +37,44 @@ const styles = {
 }
 
 export default function ChildForm(props) {
-    const { child, setChild} = props;
+    const { onSubmitProp, child, setChild, errors} = props;
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
-        console.log(`Submit a new child now`); 
-        console.log(child); 
-        // const child = {
-        //     firstName: 
-        // }; 
-
-        // onSubmitProp(child); 
+        onSubmitProp(child); 
     };
 
     const handleChange = (e) => {
-        setChild({
-            ...child,
-            [e.target.name]:e.target.value
-        }); 
+        if(e.target.name === "items"){
+            setChild({
+                ...child, 
+                [e.target.name]:e.target.value.split(', ')
+            })
+        } else if(e.target.name === "interest"){
+            setChild({
+                ...child, 
+                [e.target.name]:e.target.value.split(', ')
+            })
+        } else {
+            setChild({
+                ...child,
+                [e.target.name]:e.target.value
+            }); 
+        }
     }
 
     return (
         <Paper elevation={3} style={styles.paper}>
-            <Typography component="h1" variant="h5" style={{padding:"1rem"}}>
+            <Typography component="h1" variant="h2" style={{padding:"1rem"}}>
                 Submit a Child in Need
             </Typography>
+            { errors.length > 0 && 
+                <div style={{color: "red"}}>
+                    { errors.map((error) => {
+                        return <p>{ error }</p>
+                    })}
+                </div>
+            }
             <form onSubmit={handleSubmit}>
                 <Grid container spacing={2}>
                     <TextField
@@ -89,7 +107,7 @@ export default function ChildForm(props) {
                         name="age"
                         onChange={handleChange}
                         label="Age"
-                        style={styles.input}
+                        style={styles.input2}
                         >
                         <MenuItem value="0">
                             <em>under 1yr</em>
@@ -113,21 +131,241 @@ export default function ChildForm(props) {
                         <MenuItem value={17}>17</MenuItem>
                         </Select>
                     </FormControl>
-                    <Card>
                     <TextField
-                        style={styles.input}
-                        name="lastName"
-                        variant="outlined"
-                        required
-                        fullWidth
-                        id="lastName"
-                        label="Last Name"
-                        autoFocus
+                            style={styles.input2}
+                            name="email"
+                            variant="outlined"
+                            required
+                            id="email"
+                            label="Email"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                    <TextField
+                            style={styles.input2}
+                            name="phone"
+                            variant="outlined"
+                            required
+                            id="phone"
+                            label="Phone Number"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                    <Grid item spacing={2}>
+                        <Typography component="h2" variant="p" style={{padding:"1rem"}}>
+                            Mailing Address
+                        </Typography>
+                        <TextField
+                            style={styles.input}
+                            name="street"
+                            variant="outlined"
+                            required
+                            fullWidth
+                            id="street"
+                            label="Street Address"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                        <TextField
+                            style={styles.input2}
+                            name="city"
+                            variant="outlined"
+                            required
+                            id="city"
+                            label="City"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                        <FormControl variant="outlined" style={styles.formControl}>
+                        <InputLabel id="st-label">State</InputLabel>
+                        <Select
+                        labelId="st-label"
+                        id="state"
+                        name="state"
                         onChange={handleChange}
-                    />
+                        label="State"
+                        style={styles.input2}
+                        >
+                            <MenuItem value="AL">AL
+                            </MenuItem>
+                            <MenuItem value="AK">AK
+                            </MenuItem>
+                            <MenuItem value="AZ">AZ
+                            </MenuItem>
+                            <MenuItem value="AR">AR
+                            </MenuItem>
+                            <MenuItem value="CA">CA
+                            </MenuItem>
+                            <MenuItem value="CO">CO
+                            </MenuItem>
+                            <MenuItem value="CT">CT
+                            </MenuItem>
+                            <MenuItem value="DE">DE
+                            </MenuItem>
+                            <MenuItem value="FL">FL
+                            </MenuItem>
+                            <MenuItem value="GA">GA
+                            </MenuItem>
+                            <MenuItem value="HI">HI
+                            </MenuItem>
+                            <MenuItem value="ID">ID
+                            </MenuItem>
+                            <MenuItem value="IL">IL
+                            </MenuItem>
+                            <MenuItem value="IN">IN
+                            </MenuItem>
+                            <MenuItem value="IA">IA
+                            </MenuItem>
+                            <MenuItem value="KS">KS
+                            </MenuItem>
+                            <MenuItem value="KY">KY
+                            </MenuItem>
+                            <MenuItem value="LA">LA
+                            </MenuItem>
+                            <MenuItem value="ME">ME
+                            </MenuItem>
+                            <MenuItem value="MD">MD
+                            </MenuItem>
+                            <MenuItem value="MA">MA
+                            </MenuItem>
+                            <MenuItem value="MI">MI
+                            </MenuItem>
+                            <MenuItem value="MN">MN
+                            </MenuItem>
+                            <MenuItem value="MS">MS
+                            </MenuItem>
+                            <MenuItem value="MO">MO
+                            </MenuItem>
+                            <MenuItem value="MT">MT
+                            </MenuItem>
+                            <MenuItem value="NE">NE
+                            </MenuItem>
+                            <MenuItem value="NV">NV
+                            </MenuItem>
+                            <MenuItem value="NH">NH
+                            </MenuItem>
+                            <MenuItem value="NJ">NJ
+                            </MenuItem>
+                            <MenuItem value="NM">NM
+                            </MenuItem>
+                            <MenuItem value="NY">NY
+                            </MenuItem>
+                            <MenuItem value="NC">NC
+                            </MenuItem>
+                            <MenuItem value="ND">ND
+                            </MenuItem>
+                            <MenuItem value="OH">OH
+                            </MenuItem>
+                            <MenuItem value="OK">OK
+                            </MenuItem>
+                            <MenuItem value="OR">OR
+                            </MenuItem>
+                            <MenuItem value="PA">PA
+                            </MenuItem>
+                            <MenuItem value="RI">RI
+                            </MenuItem>
+                            <MenuItem value="SC">SC
+                            </MenuItem>
+                            <MenuItem value="SD">SD
+                            </MenuItem>
+                            <MenuItem value="TN">TN
+                            </MenuItem>
+                            <MenuItem value="TX">TX
+                            </MenuItem>
+                            <MenuItem value="UT">UT
+                            </MenuItem>
+                            <MenuItem value="VT">VT
+                            </MenuItem>
+                            <MenuItem value="VA">VA
+                            </MenuItem>
+                            <MenuItem value="WA">WA
+                            </MenuItem>
+                            <MenuItem value="WV">WV
+                            </MenuItem>
+                            <MenuItem value="WI">WI
+                            </MenuItem>
+                            <MenuItem value="WY">WY
+                            </MenuItem>
+                        </Select>
+                        </FormControl>
+                        <TextField
+                            style={styles.input2}
+                            name="zipCode"
+                            variant="outlined"
+                            required
+                            id="zipCode"
+                            label="Zip Code"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                    </Grid>
+                    <Grid item spacing={2}>
+                        <Typography component="h2" variant="p" style={{padding:"1rem"}}>
+                            Clothing Sizes
+                        </Typography>
+                        <TextField
+                            style={styles.input}
+                            name="shirtSize"
+                            variant="outlined"
+                            required
+                            fullWidth
+                            id="shirtSize"
+                            label="Shirt Size"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                        <TextField
+                            style={styles.input}
+                            name="pantSize"
+                            variant="outlined"
+                            required
+                            fullWidth
+                            id="pantSize"
+                            label="Pant Size"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                        <TextField
+                            style={styles.input}
+                            name="shoeSize"
+                            variant="outlined"
+                            required
+                            fullWidth
+                            id="shoeSize"
+                            label="Shoe Size"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                    </Grid>
+                    <Grid item spacing={2}>
+                        <Typography component="h2" variant="p" style={{padding:"1rem"}}>
+                            Wish List
+                        </Typography>
+                        <TextField
+                            style={styles.input}
+                            name="items"
+                            variant="outlined"
+                            required
+                            fullWidth
+                            id="items"
+                            label="Gifts"
+                            autoFocus
+                            onChange={handleChange}
+                        />
+                        <TextField
+                            style={styles.input}
+                            name="interest"
+                            variant="outlined"
+                            required
+                            fullWidth
+                            id="interest"
+                            label="Child's Interests"
+                            autoFocus
+                            onChange={handleChange}
+                        />
 
-                    </Card>
-                </Grid>
+                    </Grid>
+                    </Grid>
                 
                 <Button
                     type="submit"
