@@ -11,7 +11,13 @@ const Main = () => {
         axios
             .get("http://localhost:8000/api/children")
             .then((res)=>{
-                setChildren(res.data); 
+                const filteredChildren = res.data.filter(
+                    (child) => {
+                        return child.isHelped === false; 
+                    }
+                ); 
+                console.log(filteredChildren); 
+                setChildren(filteredChildren); 
             })
             .catch((err)=>{
                 console.error(err); 
