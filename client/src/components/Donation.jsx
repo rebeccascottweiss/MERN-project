@@ -3,18 +3,22 @@ import axios from "axios"
 import { navigate } from "@reach/router"
 import Header from "./Header"
 
+
 const Donation = () => {
     const [donation, setDonation] = useState(0)
     const [anonname, setAnonName] = useState("")
     const [recipient, setRecipient] = useState("")
     const submitHandler =(e)=>{
-        e.preventDefault();        
+        e.preventDefault();
         axios.post("http://localhost:8000/api/donation",{
             donation, 
             anonname,
             recipient,
         })
-        .then(res=>navigate("/"))
+        .then(res=>{console.log(res.data)
+            alert('Thank you for your generosity'); 
+            navigate('/');
+            })
         .catch(err=>console.log(err))
     }
     return(

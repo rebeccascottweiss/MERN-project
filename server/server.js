@@ -13,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 require("./routes/child.routes")(app);
+require("./routes/donation.routes")(app);
 
 require("./routes/donation.routes")(app); 
 

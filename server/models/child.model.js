@@ -75,7 +75,6 @@ const ChildSchema = new mongoose.Schema(
         wishlist: {
             type: String,
         },
-
         isHelped: {
             type: Boolean,
             default: false,
@@ -83,7 +82,6 @@ const ChildSchema = new mongoose.Schema(
     },
     { timestamps: true }
 );
-
 
 const Child = mongoose.model("Child", ChildSchema);
 
