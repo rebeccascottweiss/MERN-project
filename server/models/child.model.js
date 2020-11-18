@@ -62,6 +62,7 @@ const ChildSchema = new mongoose.Schema(
             required: [true, "{PATH} is required."],
             minlength: [1, "{PATH} must be at least {MINLENGTH} character"],
         },
+
         items: {
             type: Array,
     
@@ -69,14 +70,16 @@ const ChildSchema = new mongoose.Schema(
         
         interest: {
             type: Array,
-        
+        }, 
+
         wishlist: {
             type: String,
+        },
 
         isHelped: {
             type: Boolean,
             default: false,
-        }
+        },
     },
     { timestamps: true }
 );
