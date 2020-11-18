@@ -1,5 +1,5 @@
 import React from 'react'; 
-import Tree_PNG from '../images/Tree.png'; 
+import FirTree_PNG from '../images/FirTree.png'; 
 import { navigate } from "@reach/router"; 
 
 const Tree = (props) => {
