@@ -70,7 +70,7 @@ const treeStyle = {
         margin: "1rem auto",
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundImage: `url(${Tree_PNG})`,
+        backgroundImage: `url(${FirTree_PNG})`,
         position:"relative",
 }
 
