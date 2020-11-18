@@ -6,8 +6,9 @@ const Header = () =>{
         <div style={headerStyle}>
             <h1>Gifts Fir Kids</h1>
             <div>
-                <Link to="/">Home</Link>
-                <Link to="/child/new">Nominate a Child</Link>
+                <Link style={{color: "White"}} to="/">Home</Link>{"  |  "}
+                <Link style={{color: "White"}} to="/child/new">Nominate a Child</Link>{"  |  "}
+                <Link style={{color: "White"}} to="/donate">Make a Monetary Donation</Link>
             </div>  
         </div>
     )

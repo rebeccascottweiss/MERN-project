@@ -69,7 +69,9 @@ const ChildSchema = new mongoose.Schema(
         
         interest: {
             type: Array,
-        },
+        
+        wishlist: {
+            type: String,
 
         isHelped: {
             type: Boolean,
