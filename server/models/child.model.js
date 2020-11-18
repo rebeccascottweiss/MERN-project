@@ -70,6 +70,11 @@ const ChildSchema = new mongoose.Schema(
         interest: {
             type: Array,
         },
+
+        isHelped: {
+            type: Boolean,
+            default: false,
+        }
     },
     { timestamps: true }
 );
