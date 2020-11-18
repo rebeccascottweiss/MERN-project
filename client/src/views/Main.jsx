@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"; 
 import Tree from "../components/Tree"; 
 import Header from "../components/Header"; 
+import Stats from "../components/Stats"; 
 import axios from "axios"; 
 
 const Main = () => {
@@ -11,7 +12,13 @@ const Main = () => {
         axios
             .get("http://localhost:8000/api/children")
             .then((res)=>{
-                setChildren(res.data); 
+                const filteredChildren = res.data.filter(
+                    (child) => {
+                        return child.isHelped === false; 
+                    }
+                ); 
+                console.log(filteredChildren); 
+                setChildren(filteredChildren); 
             })
             .catch((err)=>{
                 console.error(err); 
@@ -26,6 +33,7 @@ const Main = () => {
         <Header />
         <div>
             <Tree children={ children }/>
+            <Stats children={ children }/>
         </div>
     </div>
     )

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"; 
 import { 
-    Button,
     Card, 
     CardContent, 
     CardActionArea
  } from "@material-ui/core"; 
 import axios from "axios";
 import Header from "../components/Header"; 
+import BuyButton from "../components/BuyButton"; 
 
 const Child = (props) => {
     const [ child, setChild ] = useState(null); 
@@ -60,7 +60,7 @@ const Child = (props) => {
                             </div>
                         </CardContent>
                         <CardActionArea>
-                            <Button >Buy Me Stuff</Button>
+                            <BuyButton id = { child._id }/>
                         </CardActionArea>
                     </Card>
                 </div>
