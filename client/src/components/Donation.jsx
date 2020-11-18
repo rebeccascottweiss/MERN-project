@@ -41,7 +41,7 @@ const Donation = () => {
                         <label for = "name" className="col-sm-2 col-form-label">Name: </label> 
                         <input type="Text" className = "form-control col-sm-6" placeholder="Leave Blank If Anonymous" style = {{backgroundColor: "#F9E2B6", border: "#F9E2B6"}} onChange={e=>setAnonName(e.target.value)}/>
                     </div>
-                    <button type = "button" className = "btn-sm" style = {{backgroundColor: "#606F4E", color: "#F9E2B6"}}>Be their Change</button>
+                    <button type = "submit" className = "btn-sm" style = {{backgroundColor: "#606F4E", color: "#F9E2B6"}}>Be their Change</button>
                 </form>
             </div>
         </div>
