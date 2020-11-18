@@ -1,5 +1,5 @@
 import React from 'react'; 
-import Tree_PNG from '../images/Tree.png'; 
+import FirTree_PNG from '../images/FirTree.png'; 
 import { navigate } from "@reach/router"; 
 
 const Tree = (props) => {
@@ -23,6 +23,8 @@ const Tree = (props) => {
                     <svg height="80" width="80">
                         <circle style={ ornamentStyle } />
                     </svg>
+                    <p style={{position:"absolute", top: "-2px", left: "9px", fontSize: "9px", fontWeight: "bold"}}>{child.firstName}</p>
+                    <p style={{position:"absolute", top: "8px", left: "6.5px", fontSize: "9px", fontWeight: "bold"}}>Age: {child.age}</p>
                 </div>
                 )                
             })}
@@ -33,7 +35,7 @@ const Tree = (props) => {
 const ornamentStyle = {
     cx: "20",
     cy: "20",
-    r: "10",
+    r: "18",
     fill: "red",
     cursor: "pointer",
 }

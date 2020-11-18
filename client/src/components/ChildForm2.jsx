@@ -363,7 +363,16 @@ export default function ChildForm(props) {
                             autoFocus
                             onChange={handleChange}
                         />
-
+                        <TextField
+                            style={styles.input}
+                            name="wishlist"
+                            variant="outlined"
+                            fullWidth
+                            id="wishlist"
+                            label="Link to Amazon Wish List (https://example.com)"
+                            autoFocus
+                            onChange={handleChange}
+                        />
                     </Grid>
                     </Grid>
                 

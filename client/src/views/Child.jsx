@@ -40,9 +40,13 @@ const Child = (props) => {
                             </div>
                             <div>
                                 <h3>My Wish List:</h3>
+                                <a href={child.wishlist}>My Amazon WishList</a>
                                     { child.items.map((item)=>{
                                         return (
+                                            <>
                                             <p>{ item }</p>
+                                            {console.log(child.wishlist)}
+                                            </>
                                         )
                                     })}
                             </div>

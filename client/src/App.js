@@ -4,7 +4,11 @@ import AddChild from "./views/AddChild";
 import Child from "./views/Child"; 
 import './App.css';
 import { Router } from "@reach/router"; 
+
 import Facebook from "./components/Facebook";
+
+import Donation from "./components/Donation"
+
 
 
 function App() {
@@ -14,7 +18,11 @@ function App() {
           <Main path="/" />
           <AddChild path="/child/new" />
           <Child path="/child/:id" />
+
           <Facebook path="/login" />
+
+          <Donation path = "/donate"/>
+
         </Router>
     </div>
   );

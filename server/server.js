@@ -13,6 +13,9 @@ app.use(express.json());
 app.use(cors());
 
 require("./routes/child.routes")(app);
+require("./routes/donation.routes")(app);
+
+require("./routes/donation.routes")(app); 
 
 app.listen(port, () =>
   console.log(`Listening on port ${port} for REQuests to RESpond to.`)

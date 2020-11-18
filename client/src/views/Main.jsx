@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"; 
 import Tree from "../components/Tree"; 
 import Header from "../components/Header"; 
+import Stats from "../components/Stats"; 
 import axios from "axios"; 
 
 const Main = () => {
@@ -32,6 +33,7 @@ const Main = () => {
         <Header />
         <div>
             <Tree children={ children }/>
+            <Stats children={ children }/>
         </div>
     </div>
     )
