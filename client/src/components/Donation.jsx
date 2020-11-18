@@ -7,7 +7,7 @@ const Donation = () => {
     const [recipient, setRecipient] = useState("")
     const submitHandler =(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:8000/api/",{
+        axios.post("http://localhost:8000/api/donation",{
             donation, 
             anonname,
             recipient,
