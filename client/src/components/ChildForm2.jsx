@@ -395,7 +395,10 @@ export default function ChildForm(props) {
                             label="Link to Amazon Wish List (https://example.com)"
                             autoFocus
                             onChange={handleChange}
-                        />           
+                        />
+                        <Typography component="p" variant="p" style={{padding:"1rem", color:"#630712", textShadow:"1px 1px 2px #600000"}}>
+                            Don't have an Amazon Wish List? <a href = "https://www.amazon.com/gp/registry/wishlist?ref_=nav_ListFlyout_create" target="blank" style={{padding:"1rem", color:"#121C11", textShadow:"1px 1px 2px #600000", textDecoration: "underline"}}>Click here to set one up!</a>
+                        </Typography>
                     </Grid>
                     <Grid item>         
                         <Button
