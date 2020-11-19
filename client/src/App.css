@@ -73,6 +73,7 @@
   background-color: #630713;
   color: white;
   font-weight: 700;
+  /* font-family: 'Lato', sans-serif; */
 }
 
 
@@ -87,4 +88,11 @@
   border-radius: 10px;
   background-color: #F9E2B6;
 }
+/* 
+.loginBg {
+  height: 100%;
+  width: 100%;
+  background-color: #60704E;
+
+} */
 
