@@ -70,7 +70,9 @@ const ornamentStyle = {
 const treeStyle = {
         width: "700px",
         height: "500px",
+        left:"130px",
         margin: "1rem auto",
+        borderRadius:"100px",
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundImage: `url(${FirTree_PNG})`,
