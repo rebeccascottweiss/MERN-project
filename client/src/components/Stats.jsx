@@ -47,7 +47,7 @@ const Stats = () => {
     }
 
     return(
-        <div>
+        <div style ={{color:"rgb(99,7,18)", fontFamily: "font-family: 'Lato', sans-serif;"}}>
             <h2>
                 {children.length} Need Help
             </h2>
