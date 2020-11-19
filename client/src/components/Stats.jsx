@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Present_PNG from '../images/Present.png'
 import axios from "axios";
 
 const Stats = () => {
@@ -56,6 +57,20 @@ const Stats = () => {
             })
     },[]);
 
+    const presentStyle = {
+        width: "250px",
+        height: "200px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        left:"130px",
+        margin: "",
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundImage: `url(${Present_PNG})`,
+        position:"relative",
+    }
+
     if (children === null){
         return "Loading..."
     }
@@ -67,16 +82,52 @@ const Stats = () => {
     }
     
     return(
-        <div style ={{color:"rgb(99,7,18)", fontFamily: "font-family: 'Lato', sans-serif;"}}>
-            <h2>
-                {children.length} Need Help
-            </h2>
-            <h2>
-                {kid.length} Have Been Helped
-            </h2>
-            <h2>
-                Total Donation ${total}
-            </h2>
+        <div name="presents" style ={{
+            color:"#ffffff",
+            fontFamily: "'Mountains of Christmas', cursive",
+            display: "inline-flex",
+            marginRight: "150px",
+            marginBottom: "50px",
+        }}>
+            <div name="Kids Nominated" style={presentStyle}>
+                <h3 style={{
+                    height: "200px",
+                    width: "150px",
+                    marginTop: "55px",
+                    marginRight: "55px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}>
+                    {children.length} Children Need Help
+                </h3>
+            </div>
+            <div name="Kids Helped" style={presentStyle}>
+                <h3 style={{
+                    height: "200px",
+                    width: "150px",
+                    marginTop: "55px",
+                    marginRight: "55px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}>
+                    {kid.length} Children Have Been Helped
+                </h3>
+            </div>
+            <div name="Donation" style={presentStyle}>
+                <h3 style={{
+                    height: "200px",
+                    width: "150px",
+                    marginTop: "55px",
+                    marginRight: "55px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}>
+                    ${total} Donations Have Been Made
+                </h3>
+            </div>
         </div>
 
     )
