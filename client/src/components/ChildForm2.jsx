@@ -78,6 +78,8 @@ export default function ChildForm(props) {
                 [e.target.name]:e.target.value
             }); 
         }
+
+        console.log(child); 
     }
 
     return (

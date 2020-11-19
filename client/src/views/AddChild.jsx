@@ -24,6 +24,7 @@ const New = (props) => {
                 }
                 // Set Errors
                 setErrors(errorArr);
+                console.log(err); 
               });
     }
 

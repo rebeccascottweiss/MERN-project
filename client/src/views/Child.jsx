@@ -51,7 +51,6 @@ const Child = (props) => {
                                                     return (
                                                         <>
                                                         <p>{ item }</p>
-                                                        {console.log(child.wishlist)}
                                                         </>
                                                     )
                                                 })}

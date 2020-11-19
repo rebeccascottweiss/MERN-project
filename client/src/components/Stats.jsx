@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Present_PNG from "../images/Present.png"; 
 
 const Stats = () => {
     const [ children, setChildren ] = useState(null); 
@@ -67,19 +68,56 @@ const Stats = () => {
     }
     
     return(
-        <div style ={{color:"rgb(99,7,18)", fontFamily: "font-family: 'Lato', sans-serif;"}}>
-            <h2>
-                {children.length} Need Help
-            </h2>
-            <h2>
-                {kid.length} Have Been Helped
-            </h2>
-            <h2>
-                Total Donation ${total}
-            </h2>
+        <div style ={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <div style={present}>
+                <p style={display}>
+                    {children.length}
+                </p>
+                <p style={display}>
+                    Need Help
+                </p>
+            </div>
+            <div style={present}>
+                <p style={display}>
+                    {kid.length}
+                </p>
+                <p style={display}>
+                    Have Been Helped
+                </p>
+            </div>
+            <div style={present}>
+                <p style={display}>
+                    ${total}
+                </p>
+                <p style={display}>
+                    Total Donation
+                </p>
+                
+            </div>
         </div>
 
     )
 }
 
+const present = {
+    height: "200px",
+    width: "200px",
+    fontSize: "1.3em",
+    fontFamily:"'Mountains of Christmas', cursive",
+    fontWeight: "500",
+    color: "#f8f5f0",
+    margin: "1rem",
+    textAlign: "center",
+    padding: "4rem 0rem 0rem 2rem",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundImage: `url(${Present_PNG})`,
+    backgroundSize: "contain",
+}
+
+const display = {
+    transform:"rotate(30deg)", 
+    lineHeight: ".5em",
+    marginTop: ".5em",
+}
 export default Stats;
