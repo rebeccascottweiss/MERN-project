@@ -9,7 +9,7 @@ import Header from "../components/Header";
 import BuyButton from "../components/BuyButton"; 
 
 const Child = (props) => {
-    const [ child, setChild ] = useState(null); 
+    const [ child, setChild ] = useState(null);
     useEffect(()=>{
         axios
             .get(`http://localhost:8000/api/children/${props.id}`)
@@ -24,6 +24,18 @@ const Child = (props) => {
     if(child === null){
         return "Loading..."
     }
+    
+    function WishList() {
+        let wishlist = <a href={child.wishlist} target = "blank">My Amazon WishList</a>;
+        if (child.wishlist!==undefined){
+            return (
+                <p>{wishlist}</p>
+            );        
+        } else {
+            return (null)
+        };
+    }
+    
 
     return (
         <div>
@@ -40,12 +52,11 @@ const Child = (props) => {
                             </div>
                             <div>
                                 <h3>My Wish List:</h3>
-                                <a href={child.wishlist}>My Amazon WishList</a>
+                                <WishList/>
                                     { child.items.map((item)=>{
                                         return (
                                             <>
                                             <p>{ item }</p>
-                                            {console.log(child.wishlist)}
                                             </>
                                         )
                                     })}
