@@ -5,7 +5,7 @@ const Child = require("../models/child.model");
 module.exports = {
 
   create: function (req, res) {
-    console.log("create method executed");
+    console.log("a child was Nominated");
 
     Child.create(req.body)
       .then((child) => {
@@ -18,7 +18,7 @@ module.exports = {
 
 
   getAll(req, res) {
-    console.log("getAll method executed");
+    console.log("getAll Children executed");
     Child.find()
       .then((children) => {
         res.json(children);
@@ -29,7 +29,7 @@ module.exports = {
   },
 
   getOne(req, res) {
-    console.log("getOne method executed", "url params:", req.params);
+    console.log("getOne child method executed", "url params:", req.params);
     Child.findById(req.params.id)
       .then((child) => {
         res.json(child);
@@ -52,7 +52,7 @@ module.exports = {
   },
 
   update(req, res) {
-    console.log("update method executed", "url params:", req.params);
+    console.log("update child method executed", "url params:", req.params);
     Child.findByIdAndUpdate(req.params.id, req.body, {
       runValidators: true,
       new: true,
