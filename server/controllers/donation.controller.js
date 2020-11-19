@@ -4,7 +4,7 @@ const Donation = require("../models/donation.model");
 module.exports = {
 
   create: function (req, res) {
-    console.log("create method executed");
+    console.log("a donation has been made");
 
     Donation.create(req.body)
       .then((donation) => {
@@ -15,7 +15,7 @@ module.exports = {
       });
   },
   getAll(req, res) {
-    console.log("getAll method executed");
+    console.log("getAll donation method executed");
 
     Donation.find()
       .then((donations) => {
@@ -26,7 +26,7 @@ module.exports = {
       });
   },
   getOne(req, res) {
-    console.log("getOne method executed", "url params:", req.params);
+    console.log("getOne donation method executed", "url params:", req.params);
     Donation.findById(req.params.id)
       .then((donation) => {
         res.json(donation);

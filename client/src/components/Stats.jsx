@@ -3,7 +3,8 @@ import axios from "axios";
 
 const Stats = () => {
     const [ children, setChildren ] = useState(null); 
-    const [ kid, setKid ] = useState(null); 
+    const [ kid, setKid ] = useState(null);
+    const [ total, setTotal ] = useState(null);
 
     useEffect(()=>{
         axios
@@ -39,13 +40,32 @@ const Stats = () => {
             })
     },[]);
 
+    useEffect(()=>{
+        axios
+            .get("http://localhost:8000/api/donation")
+            .then((res)=>{
+                const cat = res.data
+                var donTotal = cat.reduce(function(prev, cur){
+                    return prev + cur.donation;
+                }, 0).toFixed(2)
+                console.log(donTotal);
+                setTotal(donTotal);
+            })
+            .catch((err)=>{
+                console.error(err); 
+            })
+    },[]);
+
     if (children === null){
         return "Loading..."
     }
     if (kid === null){
         return "Loading..."
     }
-
+    if (total === null){
+        return "Loading..."
+    }
+    
     return(
         <div>
             <h2>
@@ -55,7 +75,7 @@ const Stats = () => {
                 {kid.length} Have Been Helped
             </h2>
             <h2>
-                Amount has been Donated (Place Holder)
+                Total Donation ${total}
             </h2>
         </div>
 
