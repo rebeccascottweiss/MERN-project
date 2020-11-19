@@ -118,7 +118,6 @@ export default function ChildForm(props) {
                             fullWidth
                             id="lastName"
                             label="Last Name"
-                            autoFocus
                             onChange={handleChange}
                         />
                         <FormControl variant="outlined" style={styles.formControl}>
@@ -160,7 +159,6 @@ export default function ChildForm(props) {
                                 required
                                 id="email"
                                 label="Email"
-                                autoFocus
                                 onChange={handleChange}
                             />
                         <TextField
@@ -170,7 +168,6 @@ export default function ChildForm(props) {
                                 required
                                 id="phone"
                                 label="Phone Number"
-                                autoFocus
                                 onChange={handleChange}
                             />
                     </Grid>
@@ -186,7 +183,6 @@ export default function ChildForm(props) {
                             fullWidth
                             id="street"
                             label="Street Address"
-                            autoFocus
                             onChange={handleChange}
                         />
                         <TextField
@@ -196,7 +192,6 @@ export default function ChildForm(props) {
                             required
                             id="city"
                             label="City"
-                            autoFocus
                             onChange={handleChange}
                         />
                         <FormControl variant="outlined" style={styles.formControl}>
@@ -318,7 +313,6 @@ export default function ChildForm(props) {
                             required
                             id="zipCode"
                             label="Zip Code"
-                            autoFocus
                             onChange={handleChange}
                         />
                     </Grid>
@@ -334,7 +328,6 @@ export default function ChildForm(props) {
                             fullWidth
                             id="shirtSize"
                             label="Shirt Size"
-                            autoFocus
                             onChange={handleChange}
                         />
                         <TextField
@@ -345,7 +338,6 @@ export default function ChildForm(props) {
                             fullWidth
                             id="pantSize"
                             label="Pant Size"
-                            autoFocus
                             onChange={handleChange}
                         />
                         <TextField
@@ -356,7 +348,6 @@ export default function ChildForm(props) {
                             fullWidth
                             id="shoeSize"
                             label="Shoe Size"
-                            autoFocus
                             onChange={handleChange}
                         />
                     </Grid>
@@ -372,7 +363,6 @@ export default function ChildForm(props) {
                             fullWidth
                             id="items"
                             label="Gifts"
-                            autoFocus
                             onChange={handleChange}
                         />
                         <TextField
@@ -383,7 +373,6 @@ export default function ChildForm(props) {
                             fullWidth
                             id="interest"
                             label="Child's Interests"
-                            autoFocus
                             onChange={handleChange}
                         />
                         <TextField
@@ -393,7 +382,6 @@ export default function ChildForm(props) {
                             fullWidth
                             id="wishlist"
                             label="Link to Amazon Wish List (https://example.com)"
-                            autoFocus
                             onChange={handleChange}
                         />           
                     </Grid>
