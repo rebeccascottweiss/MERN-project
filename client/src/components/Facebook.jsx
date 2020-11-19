@@ -63,9 +63,9 @@ export default class LoginFacebook extends Component {
 
         return(
             <>
-           
+           <div className="loginBg">
             {facebookData}
-           
+            </div>
             </>
         );
     }
