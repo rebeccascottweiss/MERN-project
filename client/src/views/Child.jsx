@@ -60,7 +60,7 @@ const Child = (props) => {
                             </div>
                         </CardContent>
                         <CardActionArea>
-                            <BuyButton id = { child._id }/>
+                            <BuyButton id = { child._id } route = { child.wishlist }/>
                         </CardActionArea>
                     </Card>
                 </div>
