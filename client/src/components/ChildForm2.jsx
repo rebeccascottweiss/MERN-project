@@ -1,6 +1,7 @@
 import React from 'react';
 import {
     Paper,
+    Container,
     Grid,
     TextField,
     Button, 
@@ -10,29 +11,45 @@ import {
     InputLabel,
     Typography,
 } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles'; 
+import { ThemeProvider } from "@material-ui/styles"; 
+
+const theme = createMuiTheme({
+    palette: {
+        primary: {
+            main: "#606F4E"
+        },
+        secondary: {
+            main: "#836E59"
+        }
+    }
+})
 
 const styles = {
     paper: {
-        width: "55%", 
         padding: "1rem 2rem",
-        margin: "1rem auto"
+        margin: "1rem auto", 
+        backgroundColor: "#f8f5f0",
     },
 
     input: {
         marginBottom: "1rem", 
+        backgroundColor: "#ffffff",
     },
 
     input2: {
         marginBottom: "1rem",
-        marginRight: "1rem"
+        marginRight: "1rem",
+        backgroundColor: "#ffffff",
     },
 
     formControl: {
         width: "30%"
-    },
+    }, 
 
     button: {
-        width: "100%"
+        width: "75%",
+        marginBottom: "1rem", 
     }
 }
 
@@ -64,95 +81,101 @@ export default function ChildForm(props) {
     }
 
     return (
-        <Paper elevation={3} style={styles.paper}>
-            <Typography component="h1" variant="h2" style={{padding:"1rem"}}>
-                Submit a Child in Need
-            </Typography>
-            { errors.length > 0 && 
-                <div style={{color: "red"}}>
-                    { errors.map((error) => {
-                        return <p>{ error }</p>
-                    })}
-                </div>
-            }
-            <form onSubmit={handleSubmit}>
-                <Grid container spacing={2}>
-                    <TextField
-                        style={styles.input}
-                        name="firstName"
-                        variant="outlined"
-                        required
-                        fullWidth
-                        id="firstName"
-                        label="First Name"
-                        autoFocus
-                        onChange={handleChange}
-                    />
-                    <TextField
-                        style={styles.input}
-                        name="lastName"
-                        variant="outlined"
-                        required
-                        fullWidth
-                        id="lastName"
-                        label="Last Name"
-                        autoFocus
-                        onChange={handleChange}
-                    />
-                    <FormControl variant="outlined" style={styles.formControl}>
-                        <InputLabel id="age-label">Age</InputLabel>
-                        <Select
-                        labelId="age-label"
-                        id="age"
-                        name="age"
-                        onChange={handleChange}
-                        label="Age"
-                        style={styles.input2}
-                        >
-                        <MenuItem value="0">
-                            <em>under 1yr</em>
-                        </MenuItem>
-                        <MenuItem value={1}>1</MenuItem>
-                        <MenuItem value={2}>2</MenuItem>
-                        <MenuItem value={3}>3</MenuItem>
-                        <MenuItem value={4}>4</MenuItem>
-                        <MenuItem value={5}>5</MenuItem>
-                        <MenuItem value={6}>6</MenuItem>
-                        <MenuItem value={7}>7</MenuItem>
-                        <MenuItem value={8}>8</MenuItem>
-                        <MenuItem value={9}>9</MenuItem>
-                        <MenuItem value={10}>10</MenuItem>
-                        <MenuItem value={11}>11</MenuItem>
-                        <MenuItem value={12}>12</MenuItem>
-                        <MenuItem value={13}>13</MenuItem>
-                        <MenuItem value={14}>14</MenuItem>
-                        <MenuItem value={15}>15</MenuItem>
-                        <MenuItem value={16}>16</MenuItem>
-                        <MenuItem value={17}>17</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <TextField
-                            style={styles.input2}
-                            name="email"
+        <ThemeProvider theme={ theme }>
+            <Container maxWidth="md">
+            <Paper elevation={3} style={styles.paper}>
+            <Grid container spacing={4}>
+                <Grid item>
+                <Typography component="h1" variant="h3" style={{padding:"1rem", color:"#630712", textShadow:"1px 1px 2px #600000"}}>
+                    Submit a Child in Need
+                </Typography>
+                { errors.length > 0 && 
+                    <div style={{color: "red"}}>
+                        { errors.map((error) => {
+                            return <p>{ error }</p>
+                        })}
+                    </div>
+                }
+                </Grid>
+                <form onSubmit={handleSubmit}>
+                    <Grid item>
+                        <TextField
+                            style={styles.input}
+                            name="firstName"
                             variant="outlined"
                             required
-                            id="email"
-                            label="Email"
+                            fullWidth
+                            id="firstName"
+                            label="First Name"
                             autoFocus
                             onChange={handleChange}
                         />
-                    <TextField
-                            style={styles.input2}
-                            name="phone"
+                        <TextField
+                            style={styles.input}
+                            name="lastName"
                             variant="outlined"
                             required
-                            id="phone"
-                            label="Phone Number"
+                            fullWidth
+                            id="lastName"
+                            label="Last Name"
                             autoFocus
                             onChange={handleChange}
                         />
-                    <Grid item spacing={2}>
-                        <Typography component="h2" variant="p" style={{padding:"1rem"}}>
+                        <FormControl variant="outlined" style={styles.formControl}>
+                            <InputLabel id="age-label">Age</InputLabel>
+                            <Select
+                            labelId="age-label"
+                            id="age"
+                            name="age"
+                            onChange={handleChange}
+                            label="Age"
+                            style={styles.input2}
+                            >
+                            <MenuItem value="0">
+                                <em>under 1yr</em>
+                            </MenuItem>
+                            <MenuItem value={1}>1</MenuItem>
+                            <MenuItem value={2}>2</MenuItem>
+                            <MenuItem value={3}>3</MenuItem>
+                            <MenuItem value={4}>4</MenuItem>
+                            <MenuItem value={5}>5</MenuItem>
+                            <MenuItem value={6}>6</MenuItem>
+                            <MenuItem value={7}>7</MenuItem>
+                            <MenuItem value={8}>8</MenuItem>
+                            <MenuItem value={9}>9</MenuItem>
+                            <MenuItem value={10}>10</MenuItem>
+                            <MenuItem value={11}>11</MenuItem>
+                            <MenuItem value={12}>12</MenuItem>
+                            <MenuItem value={13}>13</MenuItem>
+                            <MenuItem value={14}>14</MenuItem>
+                            <MenuItem value={15}>15</MenuItem>
+                            <MenuItem value={16}>16</MenuItem>
+                            <MenuItem value={17}>17</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <TextField
+                                style={styles.input2}
+                                name="email"
+                                variant="outlined"
+                                required
+                                id="email"
+                                label="Email"
+                                autoFocus
+                                onChange={handleChange}
+                            />
+                        <TextField
+                                style={styles.input2}
+                                name="phone"
+                                variant="outlined"
+                                required
+                                id="phone"
+                                label="Phone Number"
+                                autoFocus
+                                onChange={handleChange}
+                            />
+                    </Grid>
+                    <Grid item>
+                        <Typography component="h2" variant="h5" style={{padding:"1rem", color:"#630712", textShadow:"1px 1px 2px #600000"}}>
                             Mailing Address
                         </Typography>
                         <TextField
@@ -299,8 +322,8 @@ export default function ChildForm(props) {
                             onChange={handleChange}
                         />
                     </Grid>
-                    <Grid item spacing={2}>
-                        <Typography component="h2" variant="p" style={{padding:"1rem"}}>
+                    <Grid item>
+                        <Typography component="h2" variant="h5" style={{padding:"1rem", color:"#630712", textShadow:"1px 1px 2px #600000"}}>
                             Clothing Sizes
                         </Typography>
                         <TextField
@@ -337,8 +360,8 @@ export default function ChildForm(props) {
                             onChange={handleChange}
                         />
                     </Grid>
-                    <Grid item spacing={2}>
-                        <Typography component="h2" variant="p" style={{padding:"1rem"}}>
+                    <Grid item>
+                        <Typography component="h2" variant="h5" style={{padding:"1rem", color:"#630712", textShadow:"1px 1px 2px #600000"}}>
                             Wish List
                         </Typography>
                         <TextField
@@ -372,19 +395,23 @@ export default function ChildForm(props) {
                             label="Link to Amazon Wish List (https://example.com)"
                             autoFocus
                             onChange={handleChange}
-                        />
+                        />           
                     </Grid>
+                    <Grid item>         
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            style={styles.button}
+                        >
+                            Submit This Child
+                        </Button>
                     </Grid>
-                
-                <Button
-                    type="submit"
-                    fullWidth
-                    variant="contained"
-                    color="primary"
-                >
-                    Submit This Child
-                </Button>
-            </form>
-        </Paper>
+                </form>
+            </Grid>
+            </Paper>
+            </Container>
+        </ThemeProvider>
     )
 }
