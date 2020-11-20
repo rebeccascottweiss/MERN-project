@@ -37,6 +37,62 @@
   }
 }
 
+
 @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Mountains+of+Christmas&display=swap');
+
+.facebook {
+  border: 3px solid #131D11;
+  
+  width: 300px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #F9E2B6;
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+.facebook h2 {
+  margin-top: 15px;
+  color: #131D11;
+ 
+}
+
+.facebook img {
+  border-radius: 50px;
+}
+
+.logOutButton, .homeButton {
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px solid #131D11;
+  background-color: #630713;
+  color: white;
+  font-weight: 700;
+  /* font-family: 'Lato', sans-serif; */
+}
+
+
+.facebook1 {
+  border: 3px solid #131D11;
+  width: 300px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #F9E2B6;
+}
+/* 
+.loginBg {
+  height: 100%;
+  width: 100%;
+  background-color: #60704E;
+
+} */
+
