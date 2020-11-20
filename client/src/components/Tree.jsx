@@ -35,20 +35,20 @@ const Tree = (props) => {
     )
 }
 
-const ornamentStyle = {
+// const ornamentStyle = {
     // cx: "20",
     // cy: "20",
     // r: "18",
     // fill: "red",
     // cursor: "pointer",
 
-    width: "40px",
-    height: "40px",
-    background: "red",
-    borderRadius: "50%",
+//     width: "40px",
+//     height: "40px",
+//     background: "red",
+//     borderRadius: "50%",
 
-    cursor: "pointer",
-}
+//     cursor: "pointer",
+// }
 
 // const position = {
 //     position: "absolute",
