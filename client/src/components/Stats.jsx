@@ -81,13 +81,6 @@ const Stats = () => {
         return "Loading..."
     }
 
-    // const Grammar = () => {
-    //     console.log("length", children.length)
-    // if ((children.length) === 1){
-    //     return (`${children.length} Child Needs Help`)
-    //     }
-    // }   
-    
     return(
         <div name="presents" style ={{
             color:"#ffffff",
