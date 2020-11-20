@@ -3,8 +3,8 @@ import Tree from "../components/Tree";
 import Header from "../components/Header"; 
 import Stats from "../components/Stats"; 
 import axios from "axios"; 
+import Snow from "react-snow-effect"; 
 const Main = () => {
-    var Snow = require('react-snow-effect');
 
     const [ children, setChildren ] = useState(null); 
 
