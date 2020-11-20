@@ -80,6 +80,13 @@ const Stats = () => {
     if (total === null){
         return "Loading..."
     }
+
+    // const Grammar = () => {
+    //     console.log("length", children.length)
+    // if ((children.length) === 1){
+    //     return (`${children.length} Child Needs Help`)
+    //     }
+    // }   
     
     return(
         <div name="presents" style ={{
@@ -99,7 +106,7 @@ const Stats = () => {
                     alignItems: "center",
                     justifyContent: "center",
                 }}>
-                    {children.length} Children Need Help
+                    {children.length} {children.length ===1? 'Child Needs Help' : "Children Need Help"}
                 </h3>
             </div>
             <div name="Kids Helped" style={presentStyle}>
@@ -112,7 +119,7 @@ const Stats = () => {
                     alignItems: "center",
                     justifyContent: "center",
                 }}>
-                    {kid.length} Children Have Been Helped
+                    {kid.length} {kid.length ===1? 'Child Has Been Helped' : "Children Have Been Helped"}
                 </h3>
             </div>
             <div name="Donation" style={presentStyle}>
@@ -125,7 +132,7 @@ const Stats = () => {
                     alignItems: "center",
                     justifyContent: "center",
                 }}>
-                    ${total} Donations Have Been Made
+                    ${total} Has Been Donated
                 </h3>
             </div>
         </div>
