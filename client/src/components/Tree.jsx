@@ -1,7 +1,7 @@
 import React from 'react'; 
 import FirTree_PNG from '../images/FirTree.png'; 
 import { navigate } from "@reach/router"; 
-import star_PNG from '../images/star.png'
+import star2_PNG from '../images/star2.png'
 
 const Tree = (props) => {
     const { children } = props; 
@@ -22,13 +22,9 @@ const Tree = (props) => {
                     top: Math.floor((Math.random() * 300) + 100) + "px", 
                     left: Math.floor((Math.random() * 200) + 100) + "px",
                 }}>
-                    {/* <div style = {ornamentStyle}/> */}
-                    <img src={star_PNG} alt= "star" style = {{height: "50px"}}></img>
-                    {/* <svg height="80" width="80">
-                        <circle style={ ornamentStyle } />
-                    </svg> */}
-                    <p style={{position:"absolute", top: "16px", left: "12px", fontSize: "8px", fontWeight: "bold"}}>{child.firstName}</p>
-                    <p style={{position:"absolute", top: "26px", left: "12px", fontSize: "8px", fontWeight: "bold"}}>Age: {child.age}</p>
+                    <img src={star2_PNG} alt= "star" style = {{height: "70px"}}></img>
+                    <p style={{position:"absolute", top: "25px", left: "25px", fontSize: "8px", fontWeight: "bold"}}>{child.firstName}</p>
+                    <p style={{position:"absolute", top: "35px", left: "22px", fontSize: "8px", fontWeight: "bold"}}>Age: {child.age}</p>
                 </div>
                 )                
             })}
@@ -36,20 +32,6 @@ const Tree = (props) => {
     )
 }
 
-// const ornamentStyle = {
-    // cx: "20",
-    // cy: "20",
-    // r: "18",
-    // fill: "red",
-    // cursor: "pointer",
-
-//     width: "40px",
-//     height: "40px",
-//     background: "red",
-//     borderRadius: "50%",
-
-//     cursor: "pointer",
-// }
 
 // const position = {
 //     position: "absolute",
