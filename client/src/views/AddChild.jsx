@@ -7,7 +7,7 @@ import { Spring } from "react-spring/renderprops";
 
 const New = (props) => {
     const [child, setChild] = useState({}); 
-    const [errors, setErrors] = useState([]); 
+    const [errors, setErrors] = useState({}); 
 
     const createChild = (newChild) =>{
         axios
@@ -17,15 +17,17 @@ const New = (props) => {
                   navigate("/"); 
               })
               .catch((err)=>{
+                // console.log(err.response.data.errors.age.message); 
                 const errorResponse = err.response.data.errors; // Get the errors from err.response.data
-                const errorArr = []; // Define a temp error array to push the messages in
-                for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
-                    errorArr.push(errorResponse[key].message)
-                }
+                // const errorArr = []; // Define a temp error array to push the messages in
+                // for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
+                    // errorArr.push(errorResponse[key].message)
+                // }
                 // Set Errors
-                setErrors(errorArr);
-                console.log(err); 
-              });
+                console.log(errorResponse)
+                setErrors(errorResponse);
+              }
+              );
     }
 
   return <div>
