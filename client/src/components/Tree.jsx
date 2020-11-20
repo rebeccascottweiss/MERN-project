@@ -13,6 +13,7 @@ const Tree = (props) => {
     }
 
     return (
+        
         <div style={ treeStyle }>
             { children.map((child)=>{
                 return (
@@ -31,7 +32,7 @@ const Tree = (props) => {
     )
 }
 
-// const position = {
+
 // const position = {
 //     position: "absolute",
 //     top: Math.floor((Math.random() * 300) + 100) + "px", 

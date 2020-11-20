@@ -30,10 +30,8 @@ const Main = () => {
     return(
     <div style={{backgroundColor:"rgb(249,226,182)"}}>
         <Header />
-        <div>
-            <Tree children={ children }/>
-            <Stats children={ children }/>
-        </div>
+        <Tree children={ children }/>
+        <Stats children={ children }/>
     </div>
     )
 }

@@ -18,11 +18,8 @@ function App() {
           <Main path="/" />
           <AddChild path="/child/new" />
           <Child path="/child/:id" />
-
           <Facebook path="/login" />
-
           <Donation path = "/donate"/>
-
         </Router>
     </div>
   );

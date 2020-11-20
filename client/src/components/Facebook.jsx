@@ -41,28 +41,31 @@ export default class LoginFacebook extends Component {
         let facebookData;
         this.state.auth ? 
             facebookData = (
-                <div>
+                <div className="facebook">
                     <img src={this.state.picture} alt={this.state.name} />
                     <h2> Welcome {this.state.name}</h2>
-                    <button onClick={this.loggedOut}>log out</button>
-                    <button onClick={this.home}>home</button>
+                    <button className="logOutButton" onClick={this.loggedOut}>log out</button>
+                    <button className="homeButton"onClick={this.home}>home</button>
 
                 </div>
             ) :
             facebookData = (
-
+                    <div className="facebook1">
                     <FacebookLoginBtn
                     appId="2434161246889439"
                     autoLoad={true}
                     fields="name,picture"
                     onClick={this.componentClicked}
-                    callback={this.responseFacebook}/>
-
+                    callback={this.responseFacebook}
+                    />
+                    </div>
             );
 
         return(
             <>
+           <div className="loginBg">
             {facebookData}
+            </div>
             </>
         );
     }
