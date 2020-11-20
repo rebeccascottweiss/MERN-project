@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Stats from "../components/Stats"; 
 import axios from "axios"; 
 const Main = () => {
+    var Snow = require('react-snow-effect');
 
     const [ children, setChildren ] = useState(null); 
 
@@ -29,6 +30,7 @@ const Main = () => {
     }
     return(
     <div style={{backgroundColor:"rgb(249,226,182)"}}>
+        <Snow />
         <Header />
         <Tree children={ children }/>
         <Stats children={ children }/>
