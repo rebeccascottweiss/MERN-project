@@ -30,12 +30,14 @@ const Main = () => {
     }
     return(
     <div style={{backgroundColor:"rgb(249,226,182)"}}>
-        <Snow />
         <Header />
-        <Tree children={ children }/>
+        <Snow />
         <Stats children={ children }/>
+        <Tree children={ children }/>
     </div>
     )
 }
+
+
 
 export default Main; 

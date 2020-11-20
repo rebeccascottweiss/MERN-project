@@ -63,8 +63,7 @@ const Stats = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        left:"130px",
-        margin: "",
+        left:"100px",
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundImage: `url(${Present_PNG})`,
@@ -85,9 +84,11 @@ const Stats = () => {
         <div name="presents" style ={{
             color:"#ffffff",
             fontFamily: "'Mountains of Christmas', cursive",
-            display: "inline-flex",
+            display: "inline-block",
             marginRight: "150px",
             marginBottom: "50px",
+            marginTop: "1em",
+            verticalAlign:"top"
         }}>
             <div name="Kids Nominated" style={presentStyle}>
                 <h3 style={{
