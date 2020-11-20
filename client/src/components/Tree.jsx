@@ -23,9 +23,9 @@ const Tree = (props) => {
                     left: Math.floor((Math.random() * 250) + 100) + "px",
                     cursor: "pointer"
                 }}>
-                    <img src={star2_PNG} alt= "star" style = {{height: "70px"}}></img>
-                    <p style={{position:"absolute", top: "25px", left: "25px", fontSize: "8px", fontWeight: "bold"}}>{child.firstName}</p>
-                    <p style={{position:"absolute", top: "35px", left: "22px", fontSize: "8px", fontWeight: "bold"}}>Age: {child.age}</p>
+                    <img src={star2_PNG} alt= "star" style = {{height: "100px"}}></img>
+                    <p style={{position:"absolute", top: "40px", left: "35px", fontSize: "10px", fontWeight: "bold"}}>{child.firstName}</p>
+                    <p style={{position:"absolute", top: "50px", left: "35px", fontSize: "10px", fontWeight: "bold"}}>Age: {child.age}</p>
                 </div>
                 )                
             })}
