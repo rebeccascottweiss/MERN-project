@@ -7,7 +7,7 @@ import { Router } from "@reach/router";
 
 import Facebook from "./components/Facebook";
 
-import Donation from "./components/Donation"
+import Donation from "./components/Donation"; 
 
 
 
