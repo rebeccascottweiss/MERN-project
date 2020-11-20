@@ -21,6 +21,7 @@ const Tree = (props) => {
                     position: "absolute",
                     top: Math.floor((Math.random() * 300) + 100) + "px", 
                     left: Math.floor((Math.random() * 200) + 100) + "px",
+                    cursor: "pointer"
                 }}>
                     <img src={star2_PNG} alt= "star" style = {{height: "70px"}}></img>
                     <p style={{position:"absolute", top: "25px", left: "25px", fontSize: "8px", fontWeight: "bold"}}>{child.firstName}</p>
