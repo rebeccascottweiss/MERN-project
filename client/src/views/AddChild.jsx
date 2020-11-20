@@ -24,6 +24,7 @@ const New = (props) => {
                     // errorArr.push(errorResponse[key].message)
                 // }
                 // Set Errors
+                console.log(errorResponse)
                 setErrors(errorResponse);
               }
               );
