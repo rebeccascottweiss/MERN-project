@@ -13,6 +13,7 @@ const Tree = (props) => {
     }
 
     return (
+        
         <div style={ treeStyle }>
             { children.map((child)=>{
                 return (

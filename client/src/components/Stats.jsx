@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Present_PNG from '../images/Present.png'
 import axios from "axios";
+import Present_PNG from "../images/Present.png"; 
 
 const Stats = () => {
     const [ children, setChildren ] = useState(null); 
@@ -132,5 +132,6 @@ const Stats = () => {
 
     )
 }
+
 
 export default Stats;

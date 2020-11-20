@@ -7,6 +7,7 @@ import {
 import axios from "axios";
 import Header from "../components/Header"; 
 import BuyButton from "../components/BuyButton"; 
+import { Spring } from "react-spring/renderprops"; 
 
 const Child = (props) => {
     const [ child, setChild ] = useState(null);
@@ -22,7 +23,7 @@ const Child = (props) => {
     }, [props.id]); 
 
     if(child === null){
-        return "Loading..."
+        return <Header />
     }
     
     function WishList() {
@@ -39,43 +40,51 @@ const Child = (props) => {
 
     return (
         <div>
-            <Header />
-            <div style={ornamentStyle}>
-                <h1>
-                    { child.firstName} { child.lastName } 
-                </h1>
-                <div>
-                    <Card>
-                        <CardContent>
+        <Header />
+        <Spring from={{ opacity: 0 }}
+            to={{ opacity: 1 }}
+            config={{ delay: 250, duration: 1000 }}>
+                {props => (
+                    <div style={props}>
+                        <div style={ornamentStyle}>
+                            <h1>
+                                { child.firstName} { child.lastName } 
+                            </h1>
                             <div>
-                                <h3>I live in { child.city } and I am { child.age } years old.</h3>
+                                <Card>
+                                    <CardContent>
+                                        <div>
+                                            <h3>I live in { child.city } and I am { child.age } years old.</h3>
+                                        </div>
+                                        <div>
+                                            <h3>My Wish List:</h3>
+                                            <WishList/>
+                                                { child.items.map((item)=>{
+                                                    return (
+                                                        <>
+                                                        <p>{ item }</p>
+                                                        </>
+                                                    )
+                                                })}
+                                        </div>
+                                        <div>
+                                            <h3>I'm Really Interested In:</h3>
+                                                { child.interest.map((interest)=>{
+                                                    return (
+                                                        <p>{ interest }</p>
+                                                    )
+                                                })}
+                                        </div>
+                                    </CardContent>
+                                    <CardActionArea>
+                                        <BuyButton id = { child._id } route = { child.wishlist }/>
+                                    </CardActionArea>
+                                </Card>
                             </div>
-                            <div>
-                                <h3>My Wish List:</h3>
-                                <WishList/>
-                                    { child.items.map((item)=>{
-                                        return (
-                                            <>
-                                            <p>{ item }</p>
-                                            </>
-                                        )
-                                    })}
-                            </div>
-                            <div>
-                                <h3>I'm Really Interested In:</h3>
-                                    { child.interest.map((interest)=>{
-                                        return (
-                                            <p>{ interest }</p>
-                                        )
-                                    })}
-                            </div>
-                        </CardContent>
-                        <CardActionArea>
-                            <BuyButton id = { child._id } route = { child.wishlist }/>
-                        </CardActionArea>
-                    </Card>
-                </div>
             </div>
+                        </div>
+        )}
+        </Spring>
         </div>
     )
 };

@@ -3,6 +3,7 @@ import axios from "axios";
 import ChildForm2 from "../components/ChildForm2"; 
 import Header from "../components/Header"; 
 import { navigate } from "@reach/router"; 
+import { Spring } from "react-spring/renderprops"; 
 
 const New = (props) => {
     const [child, setChild] = useState({}); 
@@ -23,17 +24,26 @@ const New = (props) => {
                 }
                 // Set Errors
                 setErrors(errorArr);
+                console.log(err); 
               });
     }
 
   return <div>
     <Header />
-    <ChildForm2 
-        onSubmitProp={ createChild }
-        child = { child }
-        setChild = { setChild } 
-        errors = { errors }   
-    />
+    <Spring from={{ opacity: 0 }}
+      to={{ opacity: 1 }}
+      config={{ delay: 500, duration: 1000 }} >
+        {props => (
+          <div style={props}>
+            <ChildForm2 
+                onSubmitProp={ createChild }
+                child = { child }
+                setChild = { setChild } 
+                errors = { errors }   
+            />
+          </div>
+    )}
+    </Spring>
   </div>;
 };
 
