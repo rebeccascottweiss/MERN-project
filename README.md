@@ -19,4 +19,4 @@ Rebecca Scott Weiss - https://github.com/rebeccascottweiss
 
 ## DEMO
 
-![APP DEMO]
+![APP DEMO](/images/GiftsFirKids.gif)
