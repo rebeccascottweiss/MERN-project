@@ -10,12 +10,12 @@ Gifts Fir Kids is a web based giving app. It is a platform for smaller organizat
 - Track charitable giving statistics
 
 ## AUTHORS
-John Dang - https://github.com/jdinthetrees
-Donna Nolan - https://github.com/Donna-N
-Sean Sarreal - https://github.com/Keisean5
-Santos Turcios - https://github.com/S-Turcios
-Brian Vazquez - https://github.com/brianv-17
-Rebecca Scott Weiss - https://github.com/rebeccascottweiss
+John Dang - https://github.com/jdinthetrees  
+Donna Nolan - https://github.com/Donna-N  
+Sean Sarreal - https://github.com/Keisean5  
+Santos Turcios - https://github.com/S-Turcios  
+Brian Vazquez - https://github.com/brianv-17  
+Rebecca Scott Weiss - https://github.com/rebeccascottweiss  
 
 ## DEMO
 
