@@ -13,7 +13,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.14",
-    "react-facebook-login": "^4.1.1"
+    "react-facebook-login": "^4.1.1",
+    "react-snow-effect": "^1.2.0"
   },
   "repository": {
     "type": "git",
