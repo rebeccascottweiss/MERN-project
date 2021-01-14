@@ -78,8 +78,6 @@ export default function ChildForm(props) {
                 [e.target.name]:e.target.value
             }); 
         }
-
-        console.log(child); 
     }
 
     return (
@@ -91,16 +89,14 @@ export default function ChildForm(props) {
                 <Typography component="h1" variant="h3" style={{padding:"1rem", color:"#630712", textShadow:"1px 1px 2px #600000"}}>
                     Submit a Child in Need
                 </Typography>
-                { errors.length > 0 && 
-                    <div style={{color: "red"}}>
-                        { errors.map((error) => {
-                            return <p>{ error }</p>
-                        })}
-                    </div>
-                }
                 </Grid>
                 <form onSubmit={handleSubmit}>
                     <Grid item>
+                        { errors?.firstName?.message && 
+                        <div style={{ color: "darkred" }}>
+                            { errors.firstName.message }
+                        </div>
+                        }
                         <TextField
                             style={styles.input}
                             name="firstName"
@@ -112,6 +108,11 @@ export default function ChildForm(props) {
                             autoFocus
                             onChange={handleChange}
                         />
+                        { errors?.lastName?.message && 
+                        <div style={{ color: "darkred" }}>
+                            { errors.lastName.message }
+                        </div>
+                        }
                         <TextField
                             style={styles.input}
                             name="lastName"
@@ -122,6 +123,16 @@ export default function ChildForm(props) {
                             label="Last Name"
                             onChange={handleChange}
                         />
+                        { errors?.age?.message && 
+                        <div style={{ color: "darkred" }}>
+                            { errors.age.message }
+                        </div>
+                        }
+                        { errors?.email?.message && 
+                        <div style={{ color: "darkred" }}>
+                            { errors.email.message }
+                        </div>
+                        }
                         <FormControl variant="outlined" style={styles.formControl}>
                             <InputLabel id="age-label">Age</InputLabel>
                             <Select
@@ -167,7 +178,6 @@ export default function ChildForm(props) {
                                 style={styles.input2}
                                 name="phone"
                                 variant="outlined"
-                                required
                                 id="phone"
                                 label="Phone Number"
                                 onChange={handleChange}
@@ -181,7 +191,6 @@ export default function ChildForm(props) {
                             style={styles.input}
                             name="street"
                             variant="outlined"
-                            required
                             fullWidth
                             id="street"
                             label="Street Address"
@@ -191,7 +200,6 @@ export default function ChildForm(props) {
                             style={styles.input2}
                             name="city"
                             variant="outlined"
-                            required
                             id="city"
                             label="City"
                             onChange={handleChange}
@@ -312,7 +320,6 @@ export default function ChildForm(props) {
                             style={styles.input2}
                             name="zipCode"
                             variant="outlined"
-                            required
                             id="zipCode"
                             label="Zip Code"
                             onChange={handleChange}
@@ -326,7 +333,6 @@ export default function ChildForm(props) {
                             style={styles.input}
                             name="shirtSize"
                             variant="outlined"
-                            required
                             fullWidth
                             id="shirtSize"
                             label="Shirt Size"
@@ -336,7 +342,6 @@ export default function ChildForm(props) {
                             style={styles.input}
                             name="pantSize"
                             variant="outlined"
-                            required
                             fullWidth
                             id="pantSize"
                             label="Pant Size"
@@ -346,7 +351,6 @@ export default function ChildForm(props) {
                             style={styles.input}
                             name="shoeSize"
                             variant="outlined"
-                            required
                             fullWidth
                             id="shoeSize"
                             label="Shoe Size"

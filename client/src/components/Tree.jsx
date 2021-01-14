@@ -19,12 +19,13 @@ const Tree = (props) => {
                 return (
                 <div onClick={(e)=>{clickHandle(child._id)}} style={{
                     position: "absolute",
-                    top: Math.floor((Math.random() * 300) + 100) + "px", 
-                    left: Math.floor((Math.random() * 200) + 100) + "px",
+                    top: Math.floor((Math.random() * 400) + 100) + "px", 
+                    left: Math.floor((Math.random() * 250) + 100) + "px",
+                    cursor: "pointer"
                 }}>
-                    <img src={star2_PNG} alt= "star" style = {{height: "70px"}}></img>
-                    <p style={{position:"absolute", top: "25px", left: "25px", fontSize: "8px", fontWeight: "bold"}}>{child.firstName}</p>
-                    <p style={{position:"absolute", top: "35px", left: "22px", fontSize: "8px", fontWeight: "bold"}}>Age: {child.age}</p>
+                    <img src={star2_PNG} alt= "star" style = {{height: "100px"}}></img>
+                    <p style={{position:"absolute", top: "40px", left: "35px", fontSize: "10px", fontWeight: "bold"}}>{child.firstName}</p>
+                    <p style={{position:"absolute", top: "50px", left: "35px", fontSize: "10px", fontWeight: "bold"}}>Age: {child.age}</p>
                 </div>
                 )                
             })}
@@ -33,42 +34,20 @@ const Tree = (props) => {
 }
 
 
-// const position = {
-//     position: "absolute",
-//     top: Math.floor((Math.random() * 300) + 100) + "px", 
-//     left: Math.floor((Math.random() * 200) + 100) + "px", 
-// }
-// const position1 = {
-//     position: "absolute",
-//     top: "100px", 
-//     left: "190px", 
-// }
-// const position2 = {
-//     position: "absolute",
-//     top: "200px", 
-//     left: "210px", 
-// }
-// const position3 = {
-//     position: "absolute",
-//     top: "300px", 
-//     left: "270px", 
-// }
-// const position4 = {
-//     position: "absolute",
-//     top: "400px", 
-//     left: "220px", 
-// }
+
 
 const treeStyle = {
         width: "700px",
-        height: "500px",
+        height: "600px",
         left:"130px",
-        margin: "1rem auto",
+        margin: "1em auto",
         borderRadius:"100px",
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundImage: `url(${FirTree_PNG})`,
         position:"relative",
+        display: "inline-block", 
+        verticalAlign: "top", 
 }
 
 
